@@ -1,0 +1,39 @@
+POC for Relationships
+1. @OneToOne Relationship
+Definition -->  A @OneToOne relationship signifies that each instance of an entity is associated with one and only one instance of another entity.
+Use Case --> An Author has one Address, and an Address belongs to one Author.
+Key Points:-
+The owning side contains the foreign key.
+Use the mappedBy attribute in the another entity to specify the owner.
+Cascade operations (like CascadeType.ALL) can be used to persist, remove, or merge the associated entity automatically.
+This relationship is useful for tightly coupled entities that always exist together.
+
+
+2. @OneToMany and @ManyToOne Relationship
+Definition --> A @OneToMany relationship means one entity is associated with multiple instances of another entity, while a @ManyToOne relationship means many instances of one entity are associated with one instance of another entity.
+Use Case --> An Author can write multiple Books, and each Book is written by one Author.
+Key Points:-
+Typically, this relationship is bidirectional, meaning both entities are aware of the relationship.
+The @ManyToOne side is considered the owning side and contains the **foreign key.
+The @OneToMany side uses the **mappedBy attribute to specify the relationship owner.
+Cascade operations can be used to automatically manage the related entities.
+This relationship is ideal for scenarios where one entity logically contains a collection of other entities.
+
+---------------------------------- Not Implemented but learned about it ----------------------------------
+3. @ManyToMany Relationship
+Definition --> A @ManyToMany relationship signifies that each instance of an entity can be associated with multiple instances of another entity, and vice versa.
+Use Case --> A Book can belong to multiple Categories, and a Category can have multiple Books.
+Key Points:-
+This relationship is typically bidirectional.
+A join table is used to hold the associations between the two entities.
+Both sides of the relationship can use the @ManyToMany annotation, but one side should use the mappedBy attribute to specify the relationship owner.
+Cascade operations can be applied to manage the associations automatically.
+This relationship is useful for many-to-many associations where entities can have multiple relations with each other, such as tags on blog posts or roles assigned to users.
+
+Cascade Types --> Use cascade types (like CascadeType.ALL) to automatically propagate persistence operations to the associated entities.
+Fetch Types --> Determine whether to use FetchType.LAZY or FetchType.EAGER depending on how often the related entities are accessed.
+MappedBy Attribute --> Use mappedBy to define the non-owning side of the relationship to avoid managing foreign keys on both sides.
+
+Join Tables --> Use join tables for @ManyToMany relationships to manage associations between the two entities.
+Indexes --> Consider adding indexes to foreign keys to improve query performance.
+Understanding and correctly implementing these relationships in JPA/Hibernate ensures the integrity and performance of the application’s data model.

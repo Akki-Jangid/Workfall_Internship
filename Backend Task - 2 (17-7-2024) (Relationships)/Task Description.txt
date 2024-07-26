@@ -1,0 +1,5 @@
+create one maven project and create four Entities (at least  four fields  are mandatory in single entity) with relationship between them
+prepare POC on  @OneToOne , @OneToMany,  @ ManyToOne  , @ManyToMany
+relationships
+
+Note:- Use postgresql as Database

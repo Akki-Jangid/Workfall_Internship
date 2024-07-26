@@ -1,0 +1,5 @@
+ Here  is your spring boot task ,
+ Learn what is spring boot , basic annotations and spring initializer , you should be able to   create a maven project using spring initializer and write two statics GET  api's 
+(1 st api -->  it should return dynamic text like if we send srikanth it should return Hi srikanth)
+( 2nd api -->  expect string as input and it should  check the given string is  palindrome or not and  return yes / no )
+ Note:- without connecting to  database

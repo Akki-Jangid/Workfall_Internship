@@ -1,0 +1,16 @@
+Task-III
+create one maven project , create four Entities Hospital, Staff, Patient , AppUser (at least  four fields  are mandatory in single entity) 
+with relationship between them
+Write POST, PUT , GET and DELETE apis for each entity 
+
+Note:- Use DTO's
+
+
+Task-IV
+
+create one maven project , create four Entities   Hospital, Staff, Patient , AppUser (at least  four fields  are mandatory in single entity) with relationship between them
+Write POST, PUT , GET and DELETE apis for each entity 
+
+ Note:-  Implement pagination and search for each entity By using CriteriaBuilder
+
+
