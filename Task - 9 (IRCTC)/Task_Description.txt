@@ -1,0 +1,12 @@
+Create one project for IRCTC , add entities accordingly and write api's 
+
+
+1) inserting train details , user details 
+
+2) api to get all trains with pagination and search with starting point and destination , 
+should be able to filter with  Date  
+
+3) api to book tickets ( validations are required, should not be able to book ticket if it exceeds seating  limit ) 
+
+
+4) api to get all booking details by the train (how many seats booked by each users and count of non booked seats)

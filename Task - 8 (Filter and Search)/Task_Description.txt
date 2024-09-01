@@ -1,0 +1,12 @@
+In Hospital Project create three api's which should be accessed by only admin 
+
+1)  Fetch all patients with patientName , doctorName search and pagination, 
+    add filters Doctor and Hospital Filters 
+
+2) Fetch all Hospital staff with hospitalName , staffName search and pagination 
+   add  Hospital  and role (Doctor, nurse)  filters
+
+3) Fetch all Hospitals with hospitalName , address search and pagination  
+
+
+Note :- Use native queries 

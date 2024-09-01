@@ -1,0 +1,36 @@
+1. When fields needs to be included during input operations but should be excluded during Output Operation.
+	
+	@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)  // Only allow setting the password during input
+
+
+2. Annotations used over the fields for Validation.
+    @JsonIgnore
+    private long id;
+
+    @NotBlank(message = "Name is Mandatory")
+    private String name;
+
+    @NotBlank(message = "Email is Mandatory")
+    @Email(message = "Please enter the valid Email")
+    private String email;
+
+    @NotNull(message = "Role is Mandatory")
+    private Role role;
+
+    @NotBlank(message = "Password is mandatory")
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)  // Only allow setting the password during input
+    @Size(min = 8, max = 15)
+    @Pattern(regexp = "^(?=.*[0-9])(?=.*[@#$%^&+=])(?=\\S+$).{5,}$",
+            message = "Password must be at least 5 characters long, " +
+                    "contain at least one digit, and one special character like @#$%^&+=")
+    private String password;
+
+
+3. How Filters work in the Spring Security. 
+	i) First, the filter needs to extract a username/password from the request. It could be via a Basic Auth HTTP Header, or form fields, or a cookie, etc.
+
+	ii) Then the filter needs to validate that username/password combination against something, like a database.
+
+	iii) The filter needs to check, after successful authentication, that the user is authorized to access the requested URI.
+
+   	iv) If the request survives all these checks, then the filter can let the request go through to your DispatcherServlet, i.e. your @Controllers.
